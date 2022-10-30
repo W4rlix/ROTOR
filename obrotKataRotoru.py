@@ -20,18 +20,18 @@ class MyLayout(Widget):
 
             
         #polaczenie z serwerem za pomoca socket
-            s = socket.socket()                 
-            s.connect(('127.0.0.1', 12345))
+        s = socket.socket()                 
+        s.connect(('127.0.0.1', 12345))
             
-            #wyslana komenda Lewo
-            data = "Lewo";
-            s.send(data.encode())
+        #wyslana komenda Lewo
+        data = "Lewo";
+        s.send(data.encode())
             
-            #odpowiedz od serwera wypisana w terminalu klienta
-            dataFromServer = s.recv(1024)
-            print(dataFromServer.decode())
+        #odpowiedz od serwera wypisana w terminalu klienta
+        dataFromServer = s.recv(1024)
+        print(dataFromServer.decode())
 
-            s.close()
+        s.close()
     
 
     def skret_prawo(self):

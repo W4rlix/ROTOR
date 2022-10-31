@@ -18,7 +18,8 @@ class MyLayout(Widget):
             wartosc = 359
             self.ids.KAT.text = str(wartosc)
 
-            
+        self.ids.img.stopnie = str(int(self.ids.img.stopnie) + 1)
+
         #polaczenie z serwerem za pomoca socket
         s = socket.socket()                 
         s.connect(('127.0.0.1', 12345))
@@ -45,6 +46,8 @@ class MyLayout(Widget):
             #zmiana kata na 0
             wartosc = 0
             self.ids.KAT.text = str(wartosc)
+
+        self.ids.img.stopnie = str(int(self.ids.img.stopnie) - 1)
 
         #polaczenie z serwerem za pomoca socket
         s = socket.socket()                    

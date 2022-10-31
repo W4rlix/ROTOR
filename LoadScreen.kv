@@ -3,6 +3,19 @@
         orientation: "vertical"
         size: root.width, root.height
 
+        Image:
+            stopnie:0
+            id:img
+            source: 'arrow.png'
+            size: self.texture_size
+            canvas.before:
+                PushMatrix
+                Rotate:
+                    angle: self.stopnie
+                    origin: self.center
+            canvas.after:
+                PopMatrix
+
         Label:
             id: KAT
             text: "0"
